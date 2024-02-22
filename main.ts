@@ -1,24 +1,42 @@
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(DashMotion)) {
         DashMotion = true
+        SpriteSpeed = DashSpeed
+        pause(200)
+        SpriteSpeed = 150
+        DashMotion = false
     }
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(DashMotion)) {
         DashMotion = true
+        SpriteSpeed = DashSpeed
+        pause(200)
+        SpriteSpeed = 150
+        DashMotion = false
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(DashMotion)) {
         DashMotion = true
+        SpriteSpeed = DashSpeed
+        pause(200)
+        SpriteSpeed = 150
+        DashMotion = false
     }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(DashMotion)) {
         DashMotion = true
+        SpriteSpeed = DashSpeed
+        pause(200)
+        SpriteSpeed = 150
+        DashMotion = false
     }
 })
 let DashMotion = false
+let DashSpeed = 0
+let SpriteSpeed = 0
 tiles.setCurrentTilemap(tilemap`level2`)
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
@@ -38,5 +56,5 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-let SpriteSpeed = 150
-let DashSpeed = 250
+SpriteSpeed = 150
+DashSpeed = 250
