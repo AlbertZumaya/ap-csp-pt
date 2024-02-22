@@ -7,7 +7,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         DashMotion = false
     }
 })
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(DashMotion)) {
         DashMotion = true
         SpriteSpeed = DashSpeed
@@ -16,7 +16,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         DashMotion = false
     }
 })
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (!(DashMotion)) {
         DashMotion = true
         SpriteSpeed = DashSpeed
@@ -58,3 +58,26 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 SpriteSpeed = 150
 DashSpeed = 250
+scene.cameraFollowSprite(mySprite)
+let Coin = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . 5 5 5 . . . . 
+    . . . . . . 5 5 5 . . 5 5 . . . 
+    . . . . . 5 5 . . . 5 . 5 5 . . 
+    . . . . . 5 . 5 5 5 5 5 5 5 . . 
+    . . . . 5 5 5 5 5 5 5 5 5 5 5 . 
+    . . . . 5 . 5 5 5 5 5 5 5 5 5 5 
+    . . . . 5 . 5 5 . . 5 5 5 5 5 5 
+    . . . . . 5 5 5 5 5 5 5 . 5 . 5 
+    . . . . . 5 5 5 5 5 5 5 5 . . 5 
+    . . . . . . 5 5 5 . 5 5 . . . 5 
+    . . . . . . . 5 5 5 5 5 5 5 5 . 
+    . . . . . . . . . 5 5 . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Food)
+tiles.placeOnRandomTile(Coin, sprites.castle.tilePath5)
+game.onUpdate(function () {
+    controller.moveSprite(mySprite, SpriteSpeed, 100)
+})
