@@ -17,3 +17,5 @@ let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+let SpriteSpeed = 150
+let DashSpeed = 250
