@@ -1,23 +1,24 @@
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (!(false)) {
-    	
+    if (!(DashMotion)) {
+        DashMotion = true
     }
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (!(false)) {
-    	
+    if (!(DashMotion)) {
+        DashMotion = true
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (!(false)) {
-    	
+    if (!(DashMotion)) {
+        DashMotion = true
     }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (!(false)) {
-    	
+    if (!(DashMotion)) {
+        DashMotion = true
     }
 })
+let DashMotion = false
 tiles.setCurrentTilemap(tilemap`level2`)
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
